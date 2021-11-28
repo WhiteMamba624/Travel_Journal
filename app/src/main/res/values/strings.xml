@@ -8,10 +8,12 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_about_us">About us</string>
+    <string name="menu_contact_us">Contact us</string>
     <string name="application_logo">Application Logo</string>
     <string name="trip_name">Trip name</string>
     <string name="destination">Destination</string>
     <string name="price_rating">Price/Rating</string>
+    <string name="menu_share">Share</string>
+    <string name="i_am_a_small_android_dev">I am a small android dev</string>
 </resources>

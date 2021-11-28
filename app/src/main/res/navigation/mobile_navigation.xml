@@ -12,14 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.gligamihai.traveljournal.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_about_us"
+        android:name="com.gligamihai.traveljournal.ui.aboutus.AboutUsFragment"
+        android:label="@string/menu_about_us"
+        tools:layout="@layout/fragment_aboutus" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.gligamihai.traveljournal.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_contact_us"
+        android:name="com.gligamihai.traveljournal.ui.contactus.ContactUsFragment"
+        android:label="@string/menu_contact_us"
+        tools:layout="@layout/fragment_contactus" />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.gligamihai.traveljournal.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share"/>
 </navigation>

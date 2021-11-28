@@ -19,7 +19,6 @@ import com.gligamihai.traveljournal.databinding.FragmentGalleryBinding;
 
 public class GalleryFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
     private FragmentGalleryBinding binding;
     private Button fab;
 
@@ -29,27 +28,7 @@ public class GalleryFragment extends Fragment {
 //        fab=view.findViewById(R.id.fab);
 //        fab.setVisibility(View.INVISIBLE);
         return view;
-//        galleryViewModel =
-//                new ViewModelProvider(this).get(GalleryViewModel.class);
-//
-//        binding = FragmentGalleryBinding.inflate(inflater, container, false);
-//        View root = binding.getRoot();
-//
-//        final TextView textView = binding.textGallery;
-//        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
-//
-//        return root;
 
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
 }
