@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gligamihai.traveljournal">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_app_logo"
@@ -9,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelJournal">
+        <activity android:name=".TripInfoActivity"></activity>
+        <activity android:name=".EditActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +23,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.TravelJournal.NoActionBar"></activity>
+            android:theme="@style/Theme.TravelJournal.NoActionBar" />
     </application>
 
 </manifest>

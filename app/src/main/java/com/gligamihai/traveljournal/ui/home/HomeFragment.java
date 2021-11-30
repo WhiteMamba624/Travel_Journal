@@ -42,13 +42,13 @@ public class HomeFragment extends Fragment {
     private void setupTrips() {
         trips = new ArrayList<>();
         trips.add(new Trip("Vacanta", "Barcelona", "poza"));
-        trips.add(new Trip("Vacanta", "Barcelona", "poza"));
-        trips.add(new Trip("Vacanta", "Barcelona", "poza"));
-        trips.add(new Trip("Vacanta", "Barcelona", "poza"));
-        trips.add(new Trip("Vacanta", "Barcelona", "poza"));
-        trips.add(new Trip("Vacanta", "Barcelona", "poza"));
-        trips.add(new Trip("Vacanta", "Barcelona", "poza"));
-        trips.add(new Trip("Vacanta", "Barcelona", "poza"));
+        trips.add(new Trip("Vacanta", "Madrid", "poza"));
+        trips.add(new Trip("Vacanta", "Paris", "poza"));
+        trips.add(new Trip("Vacanta", "Londra", "poza"));
+        trips.add(new Trip("Vacanta", "Calcuta", "poza"));
+        trips.add(new Trip("Vacanta", "Miami", "poza"));
+        trips.add(new Trip("Vacanta", "Iasi", "poza"));
+        trips.add(new Trip("Vacanta", "Milano", "poza"));
 
     }
 
