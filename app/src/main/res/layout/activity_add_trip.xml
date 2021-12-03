@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTripActivity">
+
+
+    <EditText
+        android:id="@+id/insertTripName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/insert_trip_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/insertTripDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/insert_trip_destination"
+        app:layout_constraintStart_toStartOf="@id/insertTripName"
+        app:layout_constraintTop_toBottomOf="@id/insertTripName" />
+
+
+    <RadioGroup
+        android:id="@+id/tripTypeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/insertTripDestination"
+        app:layout_constraintTop_toBottomOf="@id/insertTripDestination">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/city_break" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sea_side" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mountains" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/tripPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tripTypeGroup"
+        app:layout_constraintTop_toBottomOf="@id/tripTypeGroup" />
+
+    <SeekBar
+        android:id="@+id/tripPriceSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="5000"
+        android:progress="10"
+        app:layout_constraintStart_toStartOf="@id/tripPrice"
+        app:layout_constraintTop_toBottomOf="@id/tripPrice" />
+
+    <EditText
+        android:id="@+id/startTripDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tripPriceSlider"
+        app:layout_constraintTop_toBottomOf="@id/tripPriceSlider" />
+
+    <EditText
+        android:id="@+id/endTripDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="@id/tripPriceSlider"
+        app:layout_constraintTop_toBottomOf="@id/tripPriceSlider" />
+
+    <Button
+        android:id="@+id/buttonStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_date"
+        app:layout_constraintStart_toStartOf="@id/startTripDate"
+        app:layout_constraintTop_toBottomOf="@id/startTripDate" />
+
+    <Button
+        android:id="@+id/buttonEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/end_date"
+        app:layout_constraintEnd_toEndOf="@id/endTripDate"
+        app:layout_constraintTop_toBottomOf="@id/endTripDate" />
+
+    <RatingBar
+        android:id="@+id/tripRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonStartDate" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tripRating" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

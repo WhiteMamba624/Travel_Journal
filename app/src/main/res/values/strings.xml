@@ -16,4 +16,13 @@
     <string name="price_rating">Price/Rating</string>
     <string name="menu_share">Share</string>
     <string name="i_am_a_small_android_dev">I am a small android dev</string>
+    <string name="insert_trip_name">Insert trip name</string>
+    <string name="insert_trip_destination">Insert trip destination</string>
+    <string name="city_break">City Break</string>
+    <string name="sea_side">Sea Side</string>
+    <string name="mountains">Mountains</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End Date</string>
+    <string name="save">save</string>
+    <string name="text_price">\"Price \"</string>
 </resources>
