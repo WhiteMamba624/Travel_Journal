@@ -6,59 +6,60 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gligamihai.traveljournal.R;
+import com.gligamihai.traveljournal.db.TripViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements LifecycleObserver {
 
 
-
+    private TripViewModel tripViewModel;
     private List<Trip> trips;
     private RecyclerView tripRecyclerView;
+    private TripAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         tripRecyclerView = view.findViewById(R.id.tripRecyclerView);
-        setupTrips();
-        setupLayoutManager();
-        setupAdapter();
+        adapter = new TripAdapter(getActivity());
+        tripRecyclerView.setAdapter(adapter);
+        tripRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
 
         return view;
 
     }
 
-    private void setupAdapter() {
-        tripRecyclerView.setAdapter(new TripAdapter(trips));
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    @Override
+    public void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        tripViewModel = new ViewModelProvider(getActivity()).get(TripViewModel.class);
+        //tripViewModel=new ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(TripViewModel.class);
+        //tripViewModel=new ViewModelProvider(requireActivity()).get(TripViewModel.class);
+        tripViewModel.getAllTrips().observe(getActivity(), new Observer<List<Trip>>() {
+            @Override
+            public void onChanged(final List<Trip> trips) {
+                adapter.setTrips(trips);
+            }
+        });
     }
 
-    // data source
-    private void setupTrips() {
-        trips = new ArrayList<>();
-        trips.add(new Trip("Vacanta", "Barcelona", "poza"));
-        trips.add(new Trip("Vacanta", "Madrid", "poza"));
-        trips.add(new Trip("Vacanta", "Paris", "poza"));
-        trips.add(new Trip("Vacanta", "Londra", "poza"));
-        trips.add(new Trip("Vacanta", "Calcuta", "poza"));
-        trips.add(new Trip("Vacanta", "Miami", "poza"));
-        trips.add(new Trip("Vacanta", "Iasi", "poza"));
-        trips.add(new Trip("Vacanta", "Milano", "poza"));
-
-    }
-
-    // setup LayoutManager
-    private void setupLayoutManager() {
-        tripRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-    }
-
-
-//    @Override
+    //    @Override
 //    public void onDestroyView() {
 //        super.onDestroyView();
 //        binding = null;

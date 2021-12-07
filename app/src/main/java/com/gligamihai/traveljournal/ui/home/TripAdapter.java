@@ -1,5 +1,6 @@
 package com.gligamihai.traveljournal.ui.home;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +16,12 @@ import java.util.List;
 
 public class TripAdapter extends RecyclerView.Adapter<TripVIewHolder> {
 
+    private final LayoutInflater layoutInflater;
+
     private List<Trip> trips;
 
-    public TripAdapter(List<Trip> trips) {
-        this.trips = trips;
+    public TripAdapter(Context context) {
+        layoutInflater = LayoutInflater.from(context);
     }
 
     @NotNull
@@ -30,13 +33,25 @@ public class TripAdapter extends RecyclerView.Adapter<TripVIewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull TripVIewHolder holder, int position) {
-        Trip currentTrip = trips.get(position);
-        holder.getTripName().setText(currentTrip.getName());
-        holder.getTripDestination().setText(currentTrip.getDestination());
+        if(trips!=null) {
+            Trip currentTrip = trips.get(position);
+            holder.getTripName().setText(currentTrip.getName());
+            holder.getTripDestination().setText(currentTrip.getDestination());
+        }else{
+            holder.getTripName().setText("No trip");
+        }
+    }
+
+    void setTrips(List<Trip> trips) {
+        this.trips = trips;
+        notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return trips.size();
+        if(trips!=null) {
+            return trips.size();
+        }
+        else return 0;
     }
 }

@@ -81,4 +81,8 @@ public class AddTripActivity extends AppCompatActivity implements View.OnClickLi
                 }, year, month, day);
         datePickerDialog.show();
     }
+
+    public void addTrip(View view) {
+
+    }
 }
